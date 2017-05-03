@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+ <% include ./partials/head %>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+		<form action="" id="inputLoc">
+			<input type="text" name='title' placeholder='Intro to HTML'>
+			<input type="text" name='subject' placeholder='HTML'>
+			<input type="text" name='link' placeholder='www.html.com'>
+			<input type="submit" value="Submit">
+		</form>
+    <% include ./partials/table %>
+    <% include ./partials/scripts %>
+  </body>
+</html>
