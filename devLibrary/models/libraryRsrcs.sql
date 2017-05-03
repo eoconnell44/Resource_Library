@@ -7,8 +7,8 @@ CREATE TABLE resources (
 	ID SERIAL PRIMARY KEY,
 	title VARCHAR,
 	subject VARCHAR,
-	link VARCHAR,
-	date DATE
+	link VARCHAR
+	-- createdDate datetime DEFAULT(getdate())
 );
 
 INSERT INTO resources (title, subject, link)

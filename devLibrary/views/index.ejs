@@ -4,13 +4,18 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-		<form action="" id="inputLoc">
+		<form method="POST" id="inputLoc">
 			<input type="text" name='title' placeholder='Intro to HTML'>
 			<input type="text" name='subject' placeholder='HTML'>
 			<input type="text" name='link' placeholder='www.html.com'>
 			<input type="submit" value="Submit">
 		</form>
-    <% include ./partials/table %>
+<!--     <% include ./partials/table %> -->
+
+  <% if(data) { %>
+	<% include ./partials/items %>
+
+<% } %>
     <% include ./partials/scripts %>
   </body>
 </html>

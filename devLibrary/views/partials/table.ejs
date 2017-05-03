@@ -2,13 +2,26 @@
   <thead>
     <tr>
       <th>#</th>
-      <th colspan="4">First Name</th>
-      <th colspan="4">Last Name</th>
-      <th colspan="4">Username</th>
+      <th colspan="4">Title</th>
+      <th colspan="4">Subject</th>
+      <th colspan="4">Link</th>
       <th colspan="4">Date</th>
     </tr>
   </thead>
   <tbody>
+    
+  </tbody>
+  </table>
+  <% data.forEach(function(d) { %>
+    <tr>
+      <th scope="row">1</th>
+      <td colspan="4" type='text' name='title' placeholder=<%= d.title %>>title</td>
+      <td colspan="4" type='text' name='subject' placeholder=<%= d.subject %>>subject</td>
+      <td colspan="4" type='text' name='link' placeholder=<%= d.link %>>link</td>
+    </tr>
+    <tr>
+    <% }) %>
+<!--   <tbody>
     <tr>
       <th scope="row">1</th>
       <td colspan="4">Mark</td>
@@ -27,5 +40,5 @@
       <td colspan="4">Bird</td>
       <td colspan="4">@twitter</td>
     </tr>
-  </tbody>
+  </tbody> -->
 </table>
