@@ -28,11 +28,18 @@ function getAllResources(req,res,next){
 	})
 }
 
+function upVote (req,res,next) {
+	//Just need to update the db, nothing new added to page
+	db.none('update resources set likes = $1 where id = $2',
+		[req.body.likes, parseInt(req.params.id)])
+	.then(function() {
+		res.status(200)
+	})
+}
+
 function getOneResource(){
 
 }
-
-
 
 function updateResource() {
 
@@ -45,6 +52,7 @@ function deleteResource() {
 //exporting all of the functions
 module.exports = {
 	createResource: createResource,
-	getAllResources: getAllResources
+	getAllResources: getAllResources,
+	upVote: upVote,
 
 }

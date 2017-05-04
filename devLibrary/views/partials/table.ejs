@@ -6,6 +6,9 @@
       <th colspan="4">Subject</th>
       <th colspan="4">Link</th>
       <th colspan="4">Date</th>
+      <th colspan="4">Up Vote</th>
+      <th colspan="4">Down Vote</th>
+      <th colspan="4">Approval</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +19,11 @@
       <th scope="row" data-id='<%= d.id %>'> <%= d.id %> </th>
       <td colspan="4" type='text' name='title'> <%= d.title %> </td>
       <td colspan="4" type='text' name='subject'> <%= d.subject %> </td>
-      <td colspan="4" type='text' name='title'> <%= d.link %> </td>
+      <td colspan="4" type='text' name='link'><a target='_blank' href='<%= d.link %>'>  <%= d.link %> </a> </td>
+      <td colspan="4" type='text' id='upVote' name='thumbsUp'> 👍 </td>
+      <td colspan="4" type='text' id='downVote' name='thumbsDown'> 👎 </td>
+      <td colspan="4" id='likes' name='likes'> 0 </td>
+
     </tr>
     <tr>
     <% }) %>

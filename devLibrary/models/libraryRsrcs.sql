@@ -7,10 +7,11 @@ CREATE TABLE resources (
 	ID SERIAL PRIMARY KEY,
 	title VARCHAR,
 	subject VARCHAR,
-	link VARCHAR
+	link VARCHAR,
+	likes INTEGER
 	-- createdDate datetime DEFAULT(getdate())
 );
 
-INSERT INTO resources (title, subject, link)
-	VALUES('SQL DATE', 'SQL', 'https://www.w3schools.com/sql/sql_dates.asp');
+INSERT INTO resources (title, subject, link, likes)
+	VALUES('SQL DATE', 'SQL', 'https://www.w3schools.com/sql/sql_dates.asp', 0);
 	
