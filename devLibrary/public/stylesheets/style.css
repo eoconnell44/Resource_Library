@@ -2,8 +2,9 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-head {
+header {
 	height: 100px;
+	background-color: gray;
 }
 a {
   color: #00B7FF;
@@ -15,4 +16,9 @@ td {
 }
 tr:hover {
 	background-color: lightgray;
+}
+.search {
+text-align: center;
+    margin: 3% 3%;
+    width: 200px;
 }

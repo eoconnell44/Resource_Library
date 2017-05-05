@@ -29,6 +29,7 @@ router.get('/', db.getAllResources);
 router.post('/', db.createResource);
 router.patch('/:id', db.upVote);
 router.delete('/:id', db.deleteResource);
+// router.get('/:id', db.getOneResource);
 
 
 

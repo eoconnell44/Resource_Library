@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ./partials/head %>
+<head>
+	<meta charset="UTF-8">
+	<title>SPA</title>
+</head>
+<body>
+	
+  <tbody>
+    
+    <tr data-id='<%= d.id %>'>
+      <th scope="row" id='<%= d.id %>'> <%= d.id %> </th>
+      <td colspan="4" type='text' name='title'> <%= d.title %> </td>
+      <td colspan="4" type='text' name='subject'> <%= d.subject %> </td>
+      <td colspan="4" type='text' name='link'><a target='_blank' href='<%= d.link %>'>  <%= d.link %> </a> </td>
+      <td colspan="4" type='text' class='upVote' name='thumbsUp'> 👍 </td>
+      <td colspan="4" type='text' class='downVote' name='thumbsDown'> 👎 </td>
+      <td colspan="4" class='likes' name='likes'> 0 </td>
+      <td colspan="4" class='delete' name='delete'> 𝗫 </td>
+
+    </tr>
+    <tr>
+    <% }) %>
+    </tbody>
+
+</body>
+</html>

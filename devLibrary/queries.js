@@ -8,6 +8,7 @@ var pgp = require('pg-promise')(options); //passing options object to pgp
 //Port that postgres listens to
 var connString = 'postgres://localhost:5432/library_resources';
 var db = pgp(connString);
+let heroku = 'https://intense-ocean-96459.herokuapp.com/';
 
 function createResource(req,res,next){
 	console.log('new item', req.body)
@@ -34,10 +35,12 @@ function upVote (req,res,next) {
 		[req.body.likes, parseInt(req.params.id)])
 	.then(function() {
 		res.status(200)
+		console.log('upvote ok');
 	})
 }
 
 function getOneResource(){
+	console.log('got this item');
 
 }
 
@@ -45,10 +48,23 @@ function updateResource() {
 
 }
 
-function deleteResource() {
+function deleteResource(req,res,next) {
 	let resourceId = parseInt(req.params.id)
 	console.log(resourceId);
-	db.result('delete from contacts where id = $1', resourceId)
+	db.result('delete from resources where id = $1', resourceId)
+}
+
+//Search items by subject
+function querySub(req,res,next) {
+	let query = req.params.subject
+	db.any('select * from resources where subject = $1', query)
+	.then(function(data) {
+		res.json({ data: data, query: query })
+		console.log('query it up');
+	})
+	.catch(function(error){
+		console.log(error);
+	})
 }
 
 //exporting all of the functions
@@ -57,4 +73,6 @@ module.exports = {
 	getAllResources: getAllResources,
 	upVote: upVote,
 	deleteResource: deleteResource,
+	querySub: querySub,
+	// getOneResource: getOneResource,
 }

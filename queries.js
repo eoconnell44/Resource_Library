@@ -8,6 +8,7 @@ var pgp = require('pg-promise')(options); //passing options object to pgp
 //Port that postgres listens to
 var connString = 'postgres://localhost:5432/library_resources';
 var db = pgp(connString);
+let heroku = 'https://intense-ocean-96459.herokuapp.com/';
 
 function createResource(req,res,next){
 	console.log('new item', req.body)
@@ -38,6 +39,7 @@ function upVote (req,res,next) {
 }
 
 function getOneResource(){
+	console.log('got this item');
 
 }
 
@@ -51,10 +53,16 @@ function deleteResource() {
 	db.result('delete from contacts where id = $1', resourceId)
 }
 
+// function querySub(req,res,next) {
+// 	let query = $('.search').val();
+// 	console.log(query);
+// }
+
 //exporting all of the functions
 module.exports = {
 	createResource: createResource,
 	getAllResources: getAllResources,
 	upVote: upVote,
 	deleteResource: deleteResource,
+	// getOneResource: getOneResource,
 }

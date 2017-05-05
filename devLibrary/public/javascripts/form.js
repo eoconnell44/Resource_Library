@@ -1,4 +1,5 @@
 console.log('js is connected');
+let heroku = 'https://intense-ocean-96459.herokuapp.com/';
 
 //Add event to the thumbs up/down to add approval rating
 $('.upVote').on('click', function(e){
@@ -11,11 +12,11 @@ $('.upVote').on('click', function(e){
 
 let id = parseInt($(this).parent().attr('data-id'))
 	console.log(id);
-//Not recognizng likes as an integer
-	// axios.patch('http://localhost:3000/'+ id, {
-	// 	likes: now,
-	// 	id: id
-	// })
+	console.log(now);
+	axios.patch('http://localhost:3000/'+ id, {
+		likes: now,
+		id: id
+	})
 });
 
 $('.downVote').on('click', function() {
@@ -32,6 +33,25 @@ $('.delete').on('click', function() {
 	axios.delete('http://localhost:3000/'+ id)
 	$(this).parent().remove();
 })
+
+//On click on single item, redirect to info page
+$('tr').on('click', function(){
+	let row = $(this).attr('data-id');
+	console.log(row);
+})
+//Let user search for keywords
+$('.srchBtn').on('click', function(){
+	let query = $('.search').val();
+	// console.log(query);
+	axios.get('http://localhost:3000/'+ query)
+	.then(function(data){
+		console.log('received', data);
+	})
+});
+	// jQuery.get('http://localhost:3000/' + query, function(data, status){
+	// 	console.log('query this', data);
+
+
 
 // $('#likes').on('change', function() {
 // 	let id = parseInt($(this).parent().attr('data-id'))
