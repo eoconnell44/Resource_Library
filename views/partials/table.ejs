@@ -1,0 +1,33 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th colspan="4">Title</th>
+      <th colspan="4">Subject</th>
+      <th colspan="4">Link</th>
+      <th colspan="4">Date</th>
+      <th colspan="4">Up Vote</th>
+      <th colspan="4">Down Vote</th>
+      <th colspan="4">Approval</th>
+      <th colspan="4">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+
+  <% data.forEach(function(d) { %>
+    <tr data-id='<%= d.id %>'>
+      <th scope="row" id='<%= d.id %>'> <%= d.id %> </th>
+      <td colspan="4" type='text' name='title'> <%= d.title %> </td>
+      <td colspan="4" type='text' name='subject'> <%= d.subject %> </td>
+      <td colspan="4" type='text' name='link'><a target='_blank' href='<%= d.link %>'>  <%= d.link %> </a> </td>
+      <td colspan="4" type='text' class='upVote' name='thumbsUp'> 👍 </td>
+      <td colspan="4" type='text' class='downVote' name='thumbsDown'> 👎 </td>
+      <td colspan="4" class='likes' name='likes'> 0 </td>
+      <td colspan="4" class='delete' name='delete'> 𝗫 </td>
+
+    </tr>
+    <tr>
+    <% }) %>
+    </tbody>
+</table>
