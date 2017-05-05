@@ -7,11 +7,15 @@ $('.upVote').on('click', function(e){
 	let y = x.html();
 	let voteCount = parseInt(y);
 	let newNum = voteCount += 1;
-	$(x).html(newNum)
-	console.log(newNum);
-	axios.patch('http://localhost:3000/', {
-		likes: newNum
-	})
+	let now = $(x).html(newNum)
+
+let id = parseInt($(this).parent().attr('data-id'))
+	console.log(id);
+//Not recognizng likes as an integer
+	// axios.patch('http://localhost:3000/'+ id, {
+	// 	likes: now,
+	// 	id: id
+	// })
 });
 
 $('.downVote').on('click', function() {

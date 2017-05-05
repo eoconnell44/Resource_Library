@@ -9,7 +9,6 @@ CREATE TABLE resources (
 	subject VARCHAR,
 	link VARCHAR,
 	likes INTEGER
-	-- createdDate datetime DEFAULT(getdate())
 );
 
 INSERT INTO resources (title, subject, link, likes)

@@ -16,8 +16,8 @@
     
 
   <% data.forEach(function(d) { %>
-    <tr>
-      <th scope="row" data-id='<%= d.id %>'> <%= d.id %> </th>
+    <tr data-id='<%= d.id %>'>
+      <th scope="row" id='<%= d.id %>'> <%= d.id %> </th>
       <td colspan="4" type='text' name='title'> <%= d.title %> </td>
       <td colspan="4" type='text' name='subject'> <%= d.subject %> </td>
       <td colspan="4" type='text' name='link'><a target='_blank' href='<%= d.link %>'>  <%= d.link %> </a> </td>
