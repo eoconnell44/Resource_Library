@@ -46,7 +46,9 @@ function updateResource() {
 }
 
 function deleteResource() {
-
+	let resourceId = parseInt(req.params.id)
+	console.log(resourceId);
+	db.result('delete from contacts where id = $1', resourceId)
 }
 
 //exporting all of the functions
@@ -54,5 +56,5 @@ module.exports = {
 	createResource: createResource,
 	getAllResources: getAllResources,
 	upVote: upVote,
-
+	deleteResource: deleteResource,
 }

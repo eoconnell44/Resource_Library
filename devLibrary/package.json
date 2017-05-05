@@ -19,7 +19,8 @@
     "localtunnel": "^1.8.2",
     "morgan": "~1.8.1",
     "pg-promise": "^5.6.7",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "slack-api": "^0.1.12"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
